@@ -21,9 +21,9 @@ _set_bot () {
     echo "  Downloading source code ..."
     if [[ $UPSTREAM_REPO_BRANCH ]]
     then
-        git clone -b "${UPSTREAM_REPO_BRANCH}" $(https://github.com/RedisCool64/laztcat)
+        git clone -b "${UPSTREAM_REPO_BRANCH}" https://github.com/RedisCool64/catuserbot
     else
-        git clone $(https://github.com/RedisCool64/laztcat)
+        git clone https://github.com/RedisCool64/catuserbot
     fi
     echo "Done"
     echo "  Cleaning ..."
