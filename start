@@ -1,29 +1,14 @@
 #!/bin/bash
 
-_get_repolink () {
-    local regex
-    regex='(https?)://github.com/.+/.+'
-    if [[ $UPSTREAM_REPO == "goodcat" ]]
-    then
-        echo "aHR0cHM6Ly9naXRodWIuY29tL3NhbmR5MTcwOS9jYXR1c2VyYm90" | base64 -d
-    elif [[ $UPSTREAM_REPO == "badcat" ]]
-    then
-        echo "aHR0cHM6Ly9naXRodWIuY29tL0ppc2FuMDkvY2F0dXNlcmJvdA==" | base64 -d
-    elif [[ $UPSTREAM_REPO =~ $regex ]]
-    then
-        echo "${UPSTREAM_REPO}"
-    else
-        echo "aHR0cHM6Ly9naXRodWIuY29tL3NhbmR5MTcwOS9jYXR1c2VyYm90" | base64 -d
-    fi
-}
+_get_repolink = ("https://github.com/RedisCool64/catuserbot")
 
 _set_bot () {
     echo "  Downloading source code ..."
     if [[ $UPSTREAM_REPO_BRANCH ]]
     then
-        git clone -b "${UPSTREAM_REPO_BRANCH}" https://github.com/RedisCool64/catuserbot
+        git clone -b "${UPSTREAM_REPO_BRANCH}" $(_get_repolink)
     else
-        git clone https://github.com/RedisCool64/catuserbot
+        git clone $(_get_repolink)
     fi
     echo "Done"
     echo "  Cleaning ..."
