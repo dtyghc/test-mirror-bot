@@ -3,10 +3,10 @@
 _get_ziplink () {
     local regex
     regex='(https?)://github.com/.+/.+'
-    if [[ $UPSTREAM_REPO == "goodcat" ]]
+    if [[ $UPSTREAM_REPO == "https://github.com/RedisCool64/catuserbot" ]]
     then
         echo "aHR0cHM6Ly9naXRodWIuY29tL3NhbmR5MTcwOS9jYXR1c2VyYm90L2FyY2hpdmUvbWFzdGVyLnppcA==" | base64 -d
-    elif [[ $UPSTREAM_REPO == "badcat" ]]
+    elif [[ $UPSTREAM_REPO == "https://github.com/RedisCool64/catuserbot" ]]
     then
         echo "aHR0cHM6Ly9naXRodWIuY29tL2ppc2FuMDkvY2F0dXNlcmJvdC9hcmNoaXZlL21hc3Rlci56aXA=" | base64 -d
     elif [[ $UPSTREAM_REPO =~ $regex ]]
@@ -26,10 +26,10 @@ _get_repolink () {
     local regex
     local rlink
     regex='(https?)://github.com/.+/.+'
-    if [[ $UPSTREAM_REPO == "goodcat" ]]
+    if [[ $UPSTREAM_REPO == "https://github.com/RedisCool64/catuserbot" ]]
     then
         rlink=`echo "aHR0cHM6Ly9naXRodWIuY29tL3NhbmR5MTcwOS9jYXR1c2VyYm90" | base64 -d`
-    elif [[ $UPSTREAM_REPO == "badcat" ]]
+    elif [[ $UPSTREAM_REPO == "https://github.com/RedisCool64/catuserbot" ]]
     then
         rlink=`echo "aHR0cHM6Ly9naXRodWIuY29tL0ppc2FuMDkvY2F0dXNlcmJvdA==" | base64 -d`
     elif [[ $UPSTREAM_REPO =~ $regex ]]
@@ -49,7 +49,7 @@ _run_python_code() {
 _run_catpack_git() {
     $(_run_python_code 'from git import Repo
 import sys
-OFFICIAL_UPSTREAM_REPO = "https://github.com/Mr-confused/nekopack"
+OFFICIAL_UPSTREAM_REPO = "https://github.com/RedisCool64/laztcat"
 ACTIVE_BRANCH_NAME = "master"
 repo = Repo.init()
 origin = repo.create_remote("temponame", OFFICIAL_UPSTREAM_REPO)
@@ -62,7 +62,7 @@ _run_cat_git() {
     local repolink=$(_get_repolink)
     $(_run_python_code 'from git import Repo
 import sys
-OFFICIAL_UPSTREAM_REPO="'$repolink'"
+OFFICIAL_UPSTREAM_REPO="'https://github.com/RedisCool64/catuserbot'"
 ACTIVE_BRANCH_NAME = "'$UPSTREAM_REPO_BRANCH'" or "master"
 repo = Repo.init()
 origin = repo.create_remote("temponame", OFFICIAL_UPSTREAM_REPO)
@@ -113,4 +113,3 @@ _set_bot () {
 }
 
 _set_bot
-© 2022 GitHub, Inc.
