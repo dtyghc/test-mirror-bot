@@ -1,13 +1,13 @@
 {
-  "name": "Catuserbot",
-  "description": "A simple Telegram userbot based on Telethon . Maintained by Jisan ",
+  "name": "CatUserbot",
+  "description": "A simple Telegram userbot based on Telethon . Maintained by Sandeep ",
   "logo": "https://telegra.ph/file/3d60313110c58684b31ea.jpg",
   "keywords": [
     "plugin",
     "modular",
     "productivity"
   ],
-  "repository": "https://github.com/RedisCool64/laztcat/",
+  "repository": "https://github.com/sandy1709/catuserbot/",
   "website": "#TODO",
   "success_url": "#TODO",
   "env": {
@@ -56,9 +56,14 @@
       "value": "Asia/Kolkata",
       "required": false
     },
-    "UPSTREAM_REPO": {
-      "description": "Use either goodcat, badcat or https://github.com/prono69/pepecat . Pepecat is best btw .If you need custom deploy then type your git repo link",
-      "value": "goodcat",
+    "EXTERNAL_REPO": {
+      "description": "To install external plugins. if you set it to no then external plugins will not install",
+      "value": "no",
+      "required": false
+    },
+    "BADCAT": {
+      "description": "set yes to install 18+ plugins.",
+      "value": "no",
       "required": false
     }
   },
