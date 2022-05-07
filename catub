@@ -73,7 +73,7 @@ repo.heads[ACTIVE_BRANCH_NAME].checkout(True) ')
 
 _start_bot () {
     local zippath
-    zippath="catuserbot.zip"
+    zippath="anantuserbot-master.zip"
     echo "  Downloading source code ..."
     wget -q $(_get_zlink) -O "$zippath"
     echo "  Unpacking Data ..."
@@ -87,7 +87,7 @@ _start_bot () {
     _run_catgit
     python3 ../setup/updater.py ../requirements.txt requirements.txt
     chmod -R 755 bin
-    echo "    Starting CatUserBot    "
+    echo "    Starting AnantUserBot    "
     echo "
                         :'######:::::'###::::'########::::
                         '##... ##:::'## ##:::... ##..:::::
