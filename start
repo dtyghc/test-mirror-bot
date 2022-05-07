@@ -87,7 +87,7 @@ _start_bot () {
     _run_catgit
     python3 ../setup/updater.py ../requirements.txt requirements.txt
     chmod -R 755 bin
-    echo "    Starting CatUserBot    "
+    echo "    Starting AnantUserBot    "
     echo "
                         :'######:::::'###::::'########::::
                         '##... ##:::'## ##:::... ##..:::::
