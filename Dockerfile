@@ -1,8 +1,5 @@
 FROM ubuntu:22.04
 
-
-#clonning repo 
-RUN git clone https://github.com/Krazy-Goel/mirror-leech-telegram-bot.git /usr/src/app
 WORKDIR /usr/src/app
 SHELL ["/bin/bash", "-c"]
 RUN chmod 777 /usr/src/app
@@ -20,6 +17,10 @@ RUN apt-get -y update && DEBIAN_FRONTEND="noninteractive" \
     -o /usr/local/bin/megasdkrest && chmod +x /usr/local/bin/megasdkrest
 
 ENV LANG="en_US.UTF-8" LANGUAGE="en_US:en"
+
+
+#clonning repo 
+RUN git clone https://github.com/Krazy-Goel/mirror-leech-telegram-bot.git /usr/src/app
 
 COPY requirements.txt .
 RUN pip3 install --no-cache-dir -r requirements.txt
