@@ -4,6 +4,11 @@ WORKDIR /usr/src/app
 SHELL ["/bin/bash", "-c"]
 RUN chmod 777 /usr/src/app
 
+#clonning repo 
+RUN git clone https://github.com/dtyghc/mirror-leech-telegram-bot.git
+
+
+
 RUN apt-get -y update && DEBIAN_FRONTEND="noninteractive" \
     apt-get install -y python3 python3-pip aria2 qbittorrent-nox \
     tzdata p7zip-full p7zip-rar xz-utils curl pv jq ffmpeg \
@@ -18,9 +23,6 @@ RUN apt-get -y update && DEBIAN_FRONTEND="noninteractive" \
 
 ENV LANG="en_US.UTF-8" LANGUAGE="en_US:en"
 
-
-#clonning repo 
-RUN git clone https://github.com/Krazy-Goel/mirror-leech-telegram-bot.git /usr/src/app
 
 COPY requirements.txt .
 RUN pip3 install --no-cache-dir -r requirements.txt
