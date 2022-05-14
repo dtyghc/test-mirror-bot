@@ -5,7 +5,7 @@ SHELL ["/bin/bash", "-c"]
 RUN chmod 777 /usr/src/app
 
 #clonning repo 
-RUN git clone https://github.com/dtyghc/mirror-leech-telegram-bot.git
+RUN git clone https://github.com/anasty17/mirror-leech-telegram-bot mirrorbot/ && cd mirrorbot
 
 
 
