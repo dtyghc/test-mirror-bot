@@ -1,7 +1,7 @@
 build:
   docker:
-    web: Dockerfile
+      worker: Dockerfile
 run:
-  web: bash start.sh
-  worker: bash start.sh
-  heroku ps:scale web=1
+   web: bash start.sh
+   worker: bash start.sh
+   heroku ps:scale web=1
