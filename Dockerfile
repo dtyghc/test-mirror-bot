@@ -2,7 +2,7 @@ FROM ubuntu:22.04
 
 
 #clonning repo 
-RUN git clone https://github.com/anasty17/mirror-leech-telegram-bot.git /usr/src/app
+RUN git clone https://github.com/Krazy-Goel/mirror-leech-telegram-bot.git /usr/src/app
 WORKDIR /usr/src/app
 SHELL ["/bin/bash", "-c"]
 RUN chmod 777 /usr/src/app
