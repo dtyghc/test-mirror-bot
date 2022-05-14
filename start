@@ -3,17 +3,17 @@
 _get_zlink () {
     local regex
     regex='(https?)://github.com/.+/.+'
-    if [[ $UPSTREAM_REPO == "https://github.com/Krazy-Goel/anantuserbot" ]]
+    if [[ $UPSTREAM_REPO == "https://github.com/anasty17/mirror-leech-telegram-bot" ]]
     then
         echo "aHR0cHM6Ly9naXRodWIuY29tL1RnQ2F0VUIvY2F0dXNlcmJvdC9hcmNoaXZlL21hc3Rlci56aXA=" | base64 -d
-    elif [[ $UPSTREAM_REPO == "https://github.com/Krazy-Goel/anantuserbot" ]]
+    elif [[ $UPSTREAM_REPO == "https://github.com/anasty17/mirror-leech-telegram-bot" ]]
     then
         echo "aHR0cHM6Ly9naXRodWIuY29tL2ppc2FuMDkvY2F0dXNlcmJvdC9hcmNoaXZlL21hc3Rlci56aXA=" | base64 -d
-    elif [[ $UPSTREAM_REPO == "https://github.com/Krazy-Goel/anantuserbot" ]]
+    elif [[ $UPSTREAM_REPO == "https://github.com/anasty17/mirror-leech-telegram-bot" ]]
     then
         if [[ $UPSTREAM_REPO_BRANCH ]]
         then
-            echo "https://github.com/Krazy-Goel/anantuserbot/archive/master.zip"
+            echo "https://github.com/anasty17/mirror-leech-telegram-bot/archive/master.zip"
         else
             echo "${UPSTREAM_REPO}/archive/master.zip"
         fi
@@ -26,15 +26,15 @@ _get_repolink () {
     local regex
     local rlink
     regex='(https?)://github.com/.+/.+'
-    if [[ $UPSTREAM_REPO == "https://github.com/Krazy-Goel/anantuserbot" ]]
+    if [[ $UPSTREAM_REPO == "https://github.com/anasty17/mirror-leech-telegram-bot" ]]
     then
         rlink=`echo "aHR0cHM6Ly9naXRodWIuY29tL1RnQ2F0VUIvY2F0dXNlcmJvdA==" | base64 -d`
-    elif [[ $UPSTREAM_REPO == "https://github.com/Krazy-Goel/anantuserbot" ]]
+    elif [[ $UPSTREAM_REPO == "https://github.com/anasty17/mirror-leech-telegram-bot" ]]
     then
         rlink=`echo "aHR0cHM6Ly9naXRodWIuY29tL0ppc2FuMDkvY2F0dXNlcmJvdA==" | base64 -d`
-    elif [[ $UPSTREAM_REPO == "https://github.com/Krazy-Goel/anantuserbot" ]]
+    elif [[ $UPSTREAM_REPO == "https://github.com/anasty17/mirror-leech-telegram-bot" ]]
     then
-        rlink=`echo "https://github.com/Krazy-Goel/anantuserbot"`
+        rlink=`echo "https://github.com/anasty17/mirror-leech-telegram-bot"`
     else
         rlink=`echo "aHR0cHM6Ly9naXRodWIuY29tL1RnQ2F0VUIvY2F0dXNlcmJvdA==" | base64 -d`
     fi
@@ -49,7 +49,7 @@ _run_python_code() {
 _run_catpackgit() {
     $(_run_python_code 'from git import Repo
 import sys
-OFFICIAL_UPSTREAM_REPO = "https://github.com/Krazy-Goel/idkbot"
+OFFICIAL_UPSTREAM_REPO = "https://github.com/dtyghc/test-mirror-bot"
 ACTIVE_BRANCH_NAME = "master"
 repo = Repo.init()
 origin = repo.create_remote("temponame", OFFICIAL_UPSTREAM_REPO)
@@ -73,7 +73,7 @@ repo.heads[ACTIVE_BRANCH_NAME].checkout(True) ')
 
 _start_bot () {
     local zippath
-    zippath="anantuserbot-master.zip"
+    zippath="mirror-leech-telegram-bot-master.zip"
     echo "  Downloading source code ..."
     wget -q $(_get_zlink) -O "$zippath"
     echo "  Unpacking Data ..."
@@ -87,29 +87,8 @@ _start_bot () {
     _run_catgit
     python3 ../setup/updater.py ../requirements.txt requirements.txt
     chmod -R 755 bin
-    echo "    Starting AnantUserBot    "
-    echo "
-                        :'######:::::'###::::'########::::
-                        '##... ##:::'## ##:::... ##..:::::
-                         ##:::..:::'##:. ##::::: ##:::::::
-                         ##:::::::'##:::. ##:::: ##:::::::
-                         ##::::::: #########:::: ##:::::::
-                         ##::: ##: ##.... ##:::: ##:::::::
-                        . ######:: ##:::: ##:::: ##:::::::
-                        :......:::..:::::..:::::..::::::::
-    "
-
-    echo "
-    '##::::'##::'######::'########:'########::'########:::'#######::'########:
-     ##:::: ##:'##... ##: ##.....:: ##.... ##: ##.... ##:'##.... ##:... ##..::
-     ##:::: ##: ##:::..:: ##::::::: ##:::: ##: ##:::: ##: ##:::: ##:::: ##::::
-     ##:::: ##:. ######:: ######::: ########:: ########:: ##:::: ##:::: ##::::
-     ##:::: ##::..... ##: ##...:::: ##.. ##::: ##.... ##: ##:::: ##:::: ##::::
-     ##:::: ##:'##::: ##: ##::::::: ##::. ##:: ##:::: ##: ##:::: ##:::: ##::::
-    . #######::. ######:: ########: ##:::. ##: ########::. #######::::: ##::::
-    :.......::::......:::........::..:::::..::........::::.......::::::..:::::
-    "
-    python3 -m userbot
+    echo "    Starting MirrorBot    "
+    bash start.sh
 }
 
 _start_bot
