@@ -17,5 +17,4 @@ jobs:
           stack: "container,ffmpeg, Google Chrome, chromedriver, p7zip, Apt, jq, Python, aria2c"
           region: "us"
         env:
-          HD_EXTERNAL_REPO: ${{secrets.EXTERNAL_REPO}}
-          HD_BADCAT: ${{secrets.BADCAT}}
+          HD_CONFIG_FILE_URL: ${{secrets.CONFIG_FILE_URL}}
