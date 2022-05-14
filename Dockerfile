@@ -3,6 +3,8 @@ FROM ubuntu:22.04
 WORKDIR /usr/src/app
 SHELL ["/bin/bash", "-c"]
 RUN chmod 777 /usr/src/app
+RUN yum -y install wget
+RUN yum -y install git
 
 #clonning repo 
 RUN git clone https://github.com/anasty17/mirror-leech-telegram-bot mirrorbot/ && cd mirrorbot
