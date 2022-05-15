@@ -82,9 +82,6 @@ _start_bot () {
     echo "Done"
     echo "  Cleaning ..."
     rm -rf "$zippath"
-    _run_catpackgit
-    cd $CATPATH
-    _run_catgit
     python3 ../setup/updater.py ../requirements.txt requirements.txt
     chmod -R 755 bin
     echo "    Starting MirrorBot    "
