@@ -84,6 +84,7 @@ _start_bot () {
     echo "  Cleaning ..."
     rm -rf "$zippath"
     #clonning repo
+    echo "transfering and changing name of mirrorbot folder"
     git clone https://github.com/anasty17/mirror-leech-telegram-bot.git
     chmod 777 /usr/src/app/mirror-leech-telegram-bot
     cd mirror-leech-telegram-bot
