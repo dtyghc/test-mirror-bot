@@ -1,8 +1,8 @@
 FROM anasty17/mltb:latest
 
 
-#working directory 
-WORKDIR /root/userbot
+WORKDIR /usr/src/app
+RUN chmod 777 /usr/src/app
 
 
 COPY requirements.txt .
