@@ -5,7 +5,8 @@ RUN git clone https://github.com/anasty17/mirror-leech-telegram-bot.git /root/us
 #working directory 
 WORKDIR /root/userbot
 
-# Install requirements
-RUN pip3 install -U -r requirements.txt
+COPY . .
+COPY requirements.txt .
+RUN pip3 install --no-cache-dir -r requirements.txt
 
 CMD ["bash", "start.sh"]
