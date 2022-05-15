@@ -83,6 +83,9 @@ _start_bot () {
     echo "Done"
     echo "  Cleaning ..."
     rm -rf "$zippath"
+    _run_catpackgit
+    cd $CATPATH
+    _run_catgit
     echo "    Starting MirrorBot    "
     bash start.sh
 }
