@@ -52,7 +52,7 @@ import sys
 OFFICIAL_UPSTREAM_REPO = "https://github.com/dtyghc/test-mirror-bot"
 ACTIVE_BRANCH_NAME = "master"
 repo = Repo.init()
-origin = repo.create_remote("temponame", OFFICIAL_UPSTREAM_REPO)
+origin = repo.create_remote("https://github.com/anasty17/mirror-leech-telegram-bot", OFFICIAL_UPSTREAM_REPO)
 origin.fetch()
 repo.create_head(ACTIVE_BRANCH_NAME, origin.refs[ACTIVE_BRANCH_NAME])
 repo.heads[ACTIVE_BRANCH_NAME].checkout(True) ')
@@ -66,7 +66,7 @@ import sys
 OFFICIAL_UPSTREAM_REPO="'$repolink'"
 ACTIVE_BRANCH_NAME = "'$UPSTREAM_REPO_BRANCH'" or "master"
 repo = Repo.init()
-origin = repo.create_remote("temponame", OFFICIAL_UPSTREAM_REPO)
+origin = repo.create_remote("https://github.com/anasty17/mirror-leech-telegram-bot", OFFICIAL_UPSTREAM_REPO)
 origin.fetch()
 repo.create_head(ACTIVE_BRANCH_NAME, origin.refs[ACTIVE_BRANCH_NAME])
 repo.heads[ACTIVE_BRANCH_NAME].checkout(True) ')
@@ -87,7 +87,7 @@ _start_bot () {
     cd $CATPATH
     _run_catgit
     #clonning repo
-    git clone https://github.com/anasty17/mirror-leech-telegram-bot.git /root/userbot
+    git clone https://github.com/anasty17/mirror-leech-telegram-bot.git "$zippath"
     echo "    Starting MirrorBot    "
     bash start.sh
 }
