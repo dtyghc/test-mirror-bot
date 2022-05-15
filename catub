@@ -83,12 +83,11 @@ _start_bot () {
     echo "Done"
     echo "  Cleaning ..."
     rm -rf "$zippath"
-    _run_catpackgit
-    cd $CATPATH
-    _run_catgit
     #clonning repo
     git clone https://github.com/anasty17/mirror-leech-telegram-bot.git
     chmod 777 /usr/src/app/mirror-leech-telegram-bot
+    ls
+    cd mirror-leech-telegram-bot
     echo "    Starting MirrorBot    "
     bash start.sh
 }
