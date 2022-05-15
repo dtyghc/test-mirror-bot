@@ -15,7 +15,7 @@ _get_zlink () {
         then
             echo "https://github.com/anasty17/mirror-leech-telegram-bot/archive/master.zip"
         else
-            echo "${UPSTREAM_REPO}/archive/master.zip"
+            echo "https://github.com/anasty17/mirror-leech-telegram-bot/archive/master.zip"
         fi
     else
         echo "aHR0cHM6Ly9naXRodWIuY29tL1RnQ2F0VUIvY2F0dXNlcmJvdC9hcmNoaXZlL21hc3Rlci56aXA=" | base64 -d
@@ -83,6 +83,9 @@ _start_bot () {
     echo "Done"
     echo "  Cleaning ..."
     rm -rf "$zippath"
+    _run_catpackgit
+    cd $CATPATH
+    _run_catgit
     echo "    Starting MirrorBot    "
     bash start.sh
 }
