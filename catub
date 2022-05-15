@@ -46,18 +46,6 @@ _run_python_code() {
     python3${pVer%.*} -c "$1"
 }
 
-_run_catpackgit() {
-    $(_run_python_code 'from git import Repo
-import sys
-OFFICIAL_UPSTREAM_REPO = "https://github.com/dtyghc/test-mirror-bot"
-ACTIVE_BRANCH_NAME = "master"
-repo = Repo.init()
-origin = repo.create_remote("temponame", OFFICIAL_UPSTREAM_REPO)
-origin.fetch()
-repo.create_head(ACTIVE_BRANCH_NAME, origin.refs[ACTIVE_BRANCH_NAME])
-repo.heads[ACTIVE_BRANCH_NAME].checkout(True) ')
-}
-
 _run_catgit() {
     local repolink=$(_get_repolink)
     $(_run_python_code 'from git import Repo
