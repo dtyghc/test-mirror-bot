@@ -30,3 +30,11 @@ urllib3
 yt-dlp
 PyGithub
 gitpython
+tgcrypto
+ujson
+urlextract
+validators
+vcsi
+wand
+wget
+yt_dlp
