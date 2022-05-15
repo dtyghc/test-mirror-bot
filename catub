@@ -61,7 +61,7 @@ repo.heads[ACTIVE_BRANCH_NAME].checkout(True) ')
 
 _start_bot () {
     local zippath
-    zippath="mirror-leech-telegram-bot-master.zip"
+    zippath="master.zip"
     echo "  Downloading source code ..."
     wget -q $(_get_zlink) -O "$zippath"
     echo "  Unpacking Data ..."
@@ -70,8 +70,6 @@ _start_bot () {
     echo "Done"
     echo "  Cleaning ..."
     rm -rf "$zippath"
-    python3 ../setup/updater.py ../requirements.txt requirements.txt
-    chmod -R 755 bin
     echo "    Starting MirrorBot    "
     bash start.sh
 }
