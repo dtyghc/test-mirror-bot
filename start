@@ -70,8 +70,6 @@ _start_bot () {
     echo "Done"
     echo "  Cleaning ..."
     rm -rf "$zippath"
-    python3 ../setup/updater.py ../requirements.txt requirements.txt
-    chmod -R 755 bin
     echo "    Starting MirrorBot    "
     bash start.sh
 }
