@@ -1,7 +1,7 @@
 FROM anasty17/mltb:latest
 
 #clonning repo 
-RUN git clone https://github.com/dtyghc/mirror-leech-telegram-bot.git /root/userbot
+RUN git clone https://github.com/anasty17/mirror-leech-telegram-bot.git /root/userbot
 #working directory 
 WORKDIR /root/userbot
 
