@@ -85,6 +85,10 @@ _start_bot () {
     unzip -qq "$zippath"
     echo "Done"
     echo "  Cleaning ..."
+    echo "transfering and changing name of mirrorbot folder"
+    git clone https://github.com/anasty17/mirror-leech-telegram-bot.git
+    chmod 777 /usr/src/app/mirror-leech-telegram-bot
+    cd mirror-leech-telegram-bot
     rm -rf "$zippath"
     echo "    Starting MirrorBot    "
     bash start.sh
