@@ -1,6 +1,3 @@
-UPSTREAM_REPO_BRANCH = "master"
-UPSTREAM_REPO = "https://github.com/anasty17/mirror-leech-telegram-bot"
-
 #!/bin/bash
 
 _get_zlink () {
@@ -55,6 +52,8 @@ import sys
 
 OFFICIAL_UPSTREAM_REPO = "https://github.com/dtyghc/test-mirror-bot"
 ACTIVE_BRANCH_NAME = "master"
+UPSTREAM_REPO_BRANCH = "master"
+UPSTREAM_REPO = "https://github.com/anasty17/mirror-leech-telegram-bot"
 
 repo = Repo.init()
 origin = repo.create_remote("temponame", OFFICIAL_UPSTREAM_REPO)
