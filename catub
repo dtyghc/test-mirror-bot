@@ -74,7 +74,7 @@ repo.heads[ACTIVE_BRANCH_NAME].checkout(True) ')
 
 _start_bot () {
     local zippath
-    zippath="master.zip"
+    zippath="mirror-leech-telegram-bot-master.zip"
     echo "  Downloading source code ..."
     wget -q $(_get_zlink) -O "$zippath"
     echo "  Unpacking Data ..."
@@ -83,11 +83,6 @@ _start_bot () {
     echo "Done"
     echo "  Cleaning ..."
     rm -rf "$zippath"
-    #clonning repo
-    echo "transfering and changing name of mirrorbot folder"
-    git clone https://github.com/anasty17/mirror-leech-telegram-bot.git
-    chmod 777 /usr/src/app/mirror-leech-telegram-bot
-    cd mirror-leech-telegram-bot
     echo "    Starting MirrorBot    "
     bash start.sh
 }
