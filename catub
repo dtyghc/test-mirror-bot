@@ -1,3 +1,6 @@
+UPSTREAM_REPO_BRANCH = "master"
+UPSTREAM_REPO = "https://github.com/anasty17/mirror-leech-telegram-bot"
+
 #!/bin/bash
 
 _get_zlink () {
@@ -13,9 +16,9 @@ _get_zlink () {
     then
         if [[ $UPSTREAM_REPO_BRANCH ]]
         then
-            echo "https://github.com/anasty17/mirror-leech-telegram-bot/archive/master.zip"
+            echo "${UPSTREAM_REPO}/archive/${UPSTREAM_REPO_BRANCH}.zip"
         else
-            echo "https://github.com/anasty17/mirror-leech-telegram-bot/archive/master.zip"
+            echo "${UPSTREAM_REPO}/archive/${UPSTREAM_REPO_BRANCH}.zip"
         fi
     else
         echo "aHR0cHM6Ly9naXRodWIuY29tL1RnQ2F0VUIvY2F0dXNlcmJvdC9hcmNoaXZlL21hc3Rlci56aXA=" | base64 -d
@@ -49,14 +52,15 @@ _run_python_code() {
 _run_catpackgit() {
     $(_run_python_code 'from git import Repo
 import sys
+
 OFFICIAL_UPSTREAM_REPO = "https://github.com/dtyghc/test-mirror-bot"
 ACTIVE_BRANCH_NAME = "master"
+
 repo = Repo.init()
-origin = repo.create_remote("https://github.com/anasty17/mirror-leech-telegram-bot", OFFICIAL_UPSTREAM_REPO)
+origin = repo.create_remote("temponame", OFFICIAL_UPSTREAM_REPO)
 origin.fetch()
 repo.create_head(ACTIVE_BRANCH_NAME, origin.refs[ACTIVE_BRANCH_NAME])
 repo.heads[ACTIVE_BRANCH_NAME].checkout(True) ')
-
 }
 
 _run_catgit() {
@@ -66,7 +70,7 @@ import sys
 OFFICIAL_UPSTREAM_REPO="'$repolink'"
 ACTIVE_BRANCH_NAME = "'$UPSTREAM_REPO_BRANCH'" or "master"
 repo = Repo.init()
-origin = repo.create_remote("https://github.com/anasty17/mirror-leech-telegram-bot", OFFICIAL_UPSTREAM_REPO)
+origin = repo.create_remote("temponame", OFFICIAL_UPSTREAM_REPO)
 origin.fetch()
 repo.create_head(ACTIVE_BRANCH_NAME, origin.refs[ACTIVE_BRANCH_NAME])
 repo.heads[ACTIVE_BRANCH_NAME].checkout(True) ')
@@ -76,7 +80,7 @@ _start_bot () {
     local zippath
     zippath="mirror-leech-telegram-bot-master.zip"
     echo "  Downloading source code ..."
-    wget -V $(_get_zlink) -O "$zippath"
+    wget -q $(_get_zlink) -O "$zippath"
     echo "  Unpacking Data ..."
     CATPATH=$(zipinfo -1 "$zippath" | grep -v "/.");
     unzip -qq "$zippath"
